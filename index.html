@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Count</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0a96d;
+            transition: background 0.5s ease-in-out;
+        }
+
+        .container {
+            background: #ddc3a5;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #201e20;
+            transition: color 0.3s ease-in-out;
+        }
+
+        textarea {
+            width: 93%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #201e20;
+            border-radius: 5px;
+            resize: none;
+            font-size: 16px;
+            background: #ddc3a5;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        textarea:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(32, 30, 32, 0.5);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #201e20;
+        }
+
+        span {
+            font-weight: bold;
+            color: chocolate;
+            transition: color 0.3s ease-in-out;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Character Count</h2>
+        <textarea id="inputtext" placeholder="Type text here..."></textarea><br><br>
+        <p>Character Count: <span id="count">0</span></p>
+    </div>
+    <script>
+        const inputtext = document.getElementById('inputtext');
+        const count = document.getElementById('count');
+
+        inputtext.addEventListener("input", () => {
+            count.textContent = inputtext.value.length;
+        });
+    </script>
+</body>
+</html>
